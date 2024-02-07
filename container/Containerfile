@@ -63,4 +63,4 @@ WORKDIR /app
 USER uptime-kuma
 EXPOSE 3001
 VOLUME ["/app/data"]
-CMD ["/usr/bin/dumb-init", "--", "node", "server/server.js > /logs/server.log 2>&1"]
+CMD ["/usr/bin/dumb-init", "--", "node", "server/server.js"]
