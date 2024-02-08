@@ -15,7 +15,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: pvc-cbb4a7d5-1e31-4d1a-91ea-9d106391d570
   storageClassName: netapp-file-standard
   volumeMode: Filesystem
 
