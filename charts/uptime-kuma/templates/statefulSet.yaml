@@ -72,7 +72,53 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+        - resources:
+            limits:
+              cpu: 50m
+              memory: 100Mi
+            requests:
+              cpu: 25m
+              memory: 50Mi
+          readinessProbe:
+            tcpSocket:
+              port: 2020
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          terminationMessagePath: /dev/termination-log
+          name: uptime-kuma-fluent-bit-sidecar
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 2020
+              scheme: HTTP
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          ports:
+            - name: metrics
+              containerPort: 2020
+              protocol: TCP
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: log-storage
+              mountPath: /mnt/log
+            - name: flb-sc-config-volume
+              mountPath: /fluent-bit/etc/
+          terminationMessagePolicy: File
+          image: 'artifacts.developer.gov.bc.ca/docker-remote/fluent/fluent-bit:1.5.7' 
       volumes:
+        - name: flb-sc-config-volume
+          configMap:
+            name: uptime-kuma-flb-sc-config-map
+            defaultMode: 420
+        - name: log-storage
+          persistentVolumeClaim:
+            claimName: cron-log-storage-backup
         - name: uptime-storage
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:

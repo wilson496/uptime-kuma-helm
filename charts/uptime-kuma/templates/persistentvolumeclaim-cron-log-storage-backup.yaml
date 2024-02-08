@@ -1,0 +1,21 @@
+﻿kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cron-log-storage-backup
+  annotations:
+    pv.kubernetes.io/bind-completed: 'yes'
+    pv.kubernetes.io/bound-by-controller: 'yes'
+    volume.beta.kubernetes.io/storage-provisioner: csi.trident.netapp.io
+    volume.kubernetes.io/storage-provisioner: csi.trident.netapp.io
+  finalizers:
+    - kubernetes.io/pvc-protection
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: pvc-cbb4a7d5-1e31-4d1a-91ea-9d106391d570
+  storageClassName: netapp-file-standard
+  volumeMode: Filesystem
+
