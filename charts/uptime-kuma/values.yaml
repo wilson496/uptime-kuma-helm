@@ -57,7 +57,7 @@ service:
   port: 80
 
 route:
-  enabled: false
+  enabled: true
   annotations: {}
   host: ""
   labels: {}
