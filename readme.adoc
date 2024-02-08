@@ -5,6 +5,9 @@ image:https://github.com/k3rnelpan1c-dev/uptime-kuma-helm/actions/workflows/cont
 image:https://img.shields.io/maintenance/yes/2025[Maintenance]
 image:https://img.shields.io/github/license/k3rnelpan1c-dev/uptime-kuma-helm[GitHub]
 
+This is a fork of the original project seen link:https://github.com/k3rnelpan1c-dev/uptime-kuma-helm[here]. Changes will include a Fluentbit sidecar for sending STDOUT logs from Uptime Kuma as well as the route/ingress enabled by default. 
+
+
 This repo contains the automation to repackage link:https://github.com/louislam/uptime-kuma[uptime-kuma] into a non-root OCI container image as well as a simple Helm 3 Chart to deploy on OpenShift, but also on Kubernetes.
 
 The Helm Chart will deploy a single Pod as part of a `StatefulSet`, you can configure persistence and optionally deploy a OpenShift `Route` or regular K8s `Ingress` alongside.
@@ -19,7 +22,7 @@ As of version `1.3.0` of this repository/chart there is now a Helm Repository.
 [source,bash]
 .Adding the Helm repository to your Helm
 ----
-helm repo add k3 https://k3rnelpan1c-dev.github.io/uptime-kuma-helm/
+helm repo add k3 https://wilson496.github.io/uptime-kuma-helm/
 helm repo update
 ----
 
