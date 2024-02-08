@@ -3,6 +3,16 @@ entries:
   uptime-kuma:
   - apiVersion: v2
     appVersion: 1.23.11
+    created: "2024-02-08T19:22:21.92014711Z"
+    description: A Helm chart for Uptime Kuma. A fancy self-hosted monitoring tool.
+    digest: be7446d4c1811affb7d493fbff4fda70573bf3f71dfb61a2dc06cdd429f21194
+    name: uptime-kuma
+    type: application
+    urls:
+    - https://github.com/wilson496/uptime-kuma-helm/releases/download/uptime-kuma-1.3.7/uptime-kuma-1.3.7.tgz
+    version: 1.3.7
+  - apiVersion: v2
+    appVersion: 1.23.11
     created: "2024-02-08T19:06:14.607199136Z"
     description: A Helm chart for Uptime Kuma. A fancy self-hosted monitoring tool.
     digest: 40fa88bd94e15bc9a2bab4f82f4ce1d57a6a2df1ad35778f1fa6ee095f95bde2
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/wilson496/uptime-kuma-helm/releases/download/uptime-kuma-1.3.4/uptime-kuma-1.3.4.tgz
     version: 1.3.4
-generated: "2024-02-08T19:06:14.607216779Z"
+generated: "2024-02-08T19:22:21.920186093Z"
