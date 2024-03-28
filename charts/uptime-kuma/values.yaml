@@ -4,7 +4,7 @@
 
 image:
   registry: "quay.io"
-  repository: "k3rnel-pan1c/uptime-kuma"
+  repository: "wilson496/uptime-kuma"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the Chart's appVersion.
   tag: ""
@@ -89,6 +89,11 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+autoscaling:
+  enabled: true 
+  minReplicas: 0
+  maxReplicas: 1
 
 persistence:
   enabled: false

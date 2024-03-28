@@ -27,6 +27,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
+        DataClass: Medium
         {{- include "uptime-kuma.selectorLabels" . | nindent 8 }}
         {{- with .Values.commonLabels }}
         {{- toYaml . | nindent 8 }}
