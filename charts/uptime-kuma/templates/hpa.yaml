@@ -1,4 +1,3 @@
-{{- if .Values.autoscaling.enabled }}
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -35,4 +34,3 @@ spec:
   #         averageUtilization: {{ .Values.autoscaling.targetMemory }}
   #       {{- end }}
   #   {{- end }}
-{{- end }}
