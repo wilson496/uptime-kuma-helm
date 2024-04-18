@@ -14,6 +14,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
     link.argocd.argoproj.io/external-link: "https://{{ .Values.route.host }}"
+    aviinfrasetting.ako.vmware.com/name: dataclass-medium
 spec:
   host: {{ .Values.route.host | quote }}
   to:
